@@ -39,7 +39,7 @@ mesa-utils
 # --- Bureau XFCE (léger) ---
 xfce4
 xfce4-terminal
-xfce4-whisker-menu-plugin
+xfce4-whiskermenu-plugin
 xfce4-pulseaudio-plugin
 xfce4-power-manager
 xfce4-notifyd
