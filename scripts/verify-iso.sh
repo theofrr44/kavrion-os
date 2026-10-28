@@ -6,7 +6,7 @@ ISO="${1:?usage: verify-iso.sh <fichier.iso>}"
 fail=0; ok(){ echo "  [OK]    $1"; }; ko(){ echo "  [ÉCHEC] $1"; fail=1; }
 [ -s "$ISO" ] && ok "fichier présent ($(du -h "$ISO" | cut -f1))" || { ko "ISO absente"; exit 1; }
 if [ -f "$ISO.sha256" ]; then ( cd "$(dirname "$ISO")" && sha256sum -c "$(basename "$ISO").sha256" >/dev/null 2>&1 ) && ok "SHA-256 conforme" || ko "SHA-256 différent"; else ko "fichier .sha256 absent"; fi
-[ "$(dd if="$ISO" bs=1 skip=510 count=2 2>/dev/null | xxd -p)" = "55aa" ] && ok "secteur de démarrage hybride (clé USB / BIOS)" || ko "pas de MBR hybride"
+[ "$(dd if="$ISO" bs=1 skip=510 count=2 2>/dev/null | od -An -tx1 | tr -d " \n")" = "55aa" ] && ok "secteur de démarrage hybride (clé USB / BIOS)" || ko "pas de MBR hybride"
 LIST="$(xorriso -indev "$ISO" -find / -type f 2>/dev/null)"
 has(){ echo "$LIST" | grep -qiE "$1"; }
 has "/live/filesystem.squashfs" && ok "système compressé /live/filesystem.squashfs" || ko "squashfs absent"
