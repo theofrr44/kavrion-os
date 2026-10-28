@@ -1,0 +1,84 @@
+# --- Système de base / démarrage ---
+linux-image-amd64
+live-boot
+live-config
+live-config-systemd
+systemd-sysv
+sudo
+locales
+console-setup
+keyboard-configuration
+tzdata
+dbus-user-session
+polkitd
+pkexec
+udisks2
+gvfs
+gvfs-backends
+# --- Chargeurs de démarrage utilisables par l'installateur (UEFI + BIOS) ---
+grub-common
+grub-efi-amd64-bin
+grub-pc-bin
+efibootmgr
+os-prober
+dosfstools
+mtools
+# --- Microcode et firmwares (matériel récent : Wi-Fi, GPU) ---
+intel-microcode
+amd64-microcode
+firmware-linux
+firmware-misc-nonfree
+firmware-iwlwifi
+firmware-realtek
+firmware-atheros
+# --- Graphique minimal ---
+xserver-xorg
+xserver-xorg-input-libinput
+x11-xserver-utils
+mesa-utils
+# --- Bureau XFCE (léger) ---
+xfce4
+xfce4-terminal
+xfce4-whisker-menu-plugin
+xfce4-pulseaudio-plugin
+xfce4-power-manager
+xfce4-notifyd
+thunar
+thunar-archive-plugin
+mousepad
+ristretto
+file-roller
+lightdm
+lightdm-gtk-greeter
+librsvg2-common
+# --- Thèmes / polices ---
+arc-theme
+papirus-icon-theme
+fonts-inter
+fonts-dejavu-core
+# --- Réseau / son ---
+network-manager
+network-manager-gnome
+pipewire-audio
+pavucontrol
+# --- Applications ---
+firefox-esr
+firefox-esr-l10n-fr
+synaptic
+# --- Outils KAVRION (Python + GTK3) ---
+python3
+python3-gi
+gir1.2-gtk-3.0
+# --- Mises à jour de sécurité automatiques + mémoire compressée ---
+unattended-upgrades
+zram-tools
+# --- Installateur graphique ---
+calamares
+rsync
+squashfs-tools
+parted
+gdisk
+e2fsprogs
+btrfs-progs
+ntfs-3g
+cryptsetup

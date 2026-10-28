@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=KAVRION Profil écrans
+Exec=kavrion-displays apply
+X-GNOME-Autostart-Delay=1

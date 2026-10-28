@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=KAVRION Tableau de bord
+Comment=Tableau de bord plein écran pour le second écran
+Exec=kavrion-dashboard
+Icon=utilities-system-monitor
+Categories=System;Monitor;
+Terminal=false

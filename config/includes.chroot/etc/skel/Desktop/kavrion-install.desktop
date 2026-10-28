@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Installer KAVRION OS
+Comment=Installer le système sur le disque
+Exec=sudo -E calamares
+Icon=system-software-install
+Categories=System;
+Terminal=false

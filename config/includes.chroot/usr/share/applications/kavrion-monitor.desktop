@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=KAVRION Moniteur
+Comment=CPU, mémoire, disques, processus, réseau, températures
+Exec=kavrion-monitor
+Icon=utilities-system-monitor
+Categories=System;Monitor;
+Terminal=false

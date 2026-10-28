@@ -1,0 +1,26 @@
+#!/bin/sh
+# KAVRION OS - configuration live-build (Debian 13 "trixie", amd64, ISO hybride BIOS+UEFI)
+set -e
+lb config noauto \
+  --distribution trixie \
+  --architectures amd64 \
+  --linux-flavours amd64 \
+  --archive-areas "main contrib non-free-firmware" \
+  --parent-mirror-bootstrap http://deb.debian.org/debian/ \
+  --parent-mirror-binary http://deb.debian.org/debian/ \
+  --mirror-binary http://deb.debian.org/debian/ \
+  --mirror-binary-security http://deb.debian.org/debian-security/ \
+  --security true --updates true \
+  --binary-images iso-hybrid \
+  --bootloaders "syslinux,grub-efi" \
+  --debian-installer none \
+  --firmware-chroot true --firmware-binary false \
+  --memtest none \
+  --apt-indices false \
+  --chroot-squashfs-compression-type xz \
+  --image-name kavrion-os \
+  --iso-application "KAVRION OS" \
+  --iso-publisher "KAVRION OS project" \
+  --iso-volume "KAVRION_OS" \
+  --bootappend-live "boot=live components quiet locales=fr_FR.UTF-8 keyboard-layouts=fr timezone=Europe/Paris" \
+  "${@}"

@@ -1,0 +1,30 @@
+---
+componentName: kavrion
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+windowExpanding: normal
+windowSize: 900px,600px
+windowPlacement: center
+strings:
+    productName: "KAVRION OS"
+    shortProductName: "KAVRION"
+    version: "0.1"
+    shortVersion: "0.1"
+    versionedName: "KAVRION OS 0.1"
+    shortVersionedName: "KAVRION 0.1"
+    bootloaderEntryName: "KAVRION OS"
+    productUrl: "https://example.invalid/kavrion"
+    supportUrl: "https://example.invalid/kavrion/aide"
+    releaseNotesUrl: "https://example.invalid/kavrion/notes"
+    knownIssuesUrl: "https://example.invalid/kavrion/problemes"
+images:
+    productLogo: "logo.png"
+    productIcon: "icon.png"
+    productWelcome: "welcome.png"
+slideshow: "show.qml"
+slideshowAPI: 2
+style:
+    sidebarBackground: "#0b1220"
+    sidebarText: "#d7e3f4"
+    sidebarTextSelect: "#0b1220"
+    sidebarTextHighlight: "#22d3ee"

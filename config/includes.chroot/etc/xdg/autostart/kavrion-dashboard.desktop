@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=KAVRION Tableau de bord
+Exec=sh -c "sleep 4; exec kavrion-dashboard"

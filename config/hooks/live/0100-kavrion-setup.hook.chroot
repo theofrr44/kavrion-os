@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+# Identité du système
+cat > /etc/os-release <<OS
+PRETTY_NAME="KAVRION OS 0.1 (base Debian 13)"
+NAME="KAVRION OS"
+VERSION_ID="0.1"
+VERSION="0.1"
+VERSION_CODENAME=trixie
+ID=kavrion
+ID_LIKE=debian
+HOME_URL="https://example.invalid/kavrion"
+OS
+echo "KAVRION OS 0.1 \\n \\l" > /etc/issue
+echo "KAVRION OS 0.1" > /etc/issue.net
+# Locales
+sed -i 's/^# *\(fr_FR.UTF-8\)/\1/; s/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
+locale-gen
+update-locale LANG=fr_FR.UTF-8
+echo "Europe/Paris" > /etc/timezone
+# Gestionnaire de session par défaut
+echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
+systemctl enable lightdm.service NetworkManager.service zramswap.service unattended-upgrades.service || true
+# Pas d'accès distant par défaut : aucun serveur SSH n'est installé
+# Nettoyage pour alléger l'image
+apt-get clean
+rm -rf /var/lib/apt/lists/* /usr/share/doc/* /usr/share/man/* /var/cache/debconf/*-old

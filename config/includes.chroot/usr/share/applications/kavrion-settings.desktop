@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=KAVRION Paramètres
+Comment=Thème, fond d'écran, mode léger, écrans, démarrage
+Exec=kavrion-settings
+Icon=preferences-system
+Categories=Settings;DesktopSettings;
+Terminal=false
