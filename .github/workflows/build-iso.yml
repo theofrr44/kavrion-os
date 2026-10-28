@@ -26,6 +26,7 @@ jobs:
       - name: Vérifier l'ISO
         run: scripts/verify-iso.sh dist/kavrion-os-$(cat VERSION)-amd64.iso
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: kavrion-os-iso
           path: |
