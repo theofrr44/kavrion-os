@@ -12,6 +12,13 @@ jobs:
       - name: Dépendances de base
         run: apt-get update && apt-get install -y git ca-certificates
       - uses: actions/checkout@v4
+      - name: Droits d'execution
+        run: |
+          chmod +x scripts/*.sh scripts/*.py tests/*.sh
+          chmod +x config/auto/* config/hooks/live/*.chroot
+          chmod +x config/includes.chroot/usr/local/bin/*
+          chmod +x config/includes.chroot/usr/lib/kavrion/*.py
+          chmod +x config/includes.chroot/etc/skel/Desktop/*.desktop
       - name: Tests statiques
         run: apt-get install -y python3 python3-yaml && python3 tests/test_sysinfo.py && bash tests/check_repo.sh
       - name: Construire l'ISO
