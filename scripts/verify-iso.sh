@@ -18,7 +18,7 @@ xorriso -osirrox on -indev "$ISO" -extract /live/filesystem.squashfs "$TMP/fs.sq
 if [ -s "$TMP/fs.squashfs" ]; then
   cat_(){ unsquashfs -cat "$TMP/fs.squashfs" "$1" 2>/dev/null; }
   cat_ etc/os-release | grep -q 'KAVRION OS' && ok "os-release = KAVRION OS" || ko "os-release incorrect"
-  for f in usr/bin/calamares usr/lib/kavrion/kavrion_monitor.py usr/bin/lightdm usr/bin/startxfce4 etc/calamares/settings.conf; do
+  for f in usr/bin/calamares usr/lib/kavrion/kavrion_monitor.py usr/sbin/lightdm usr/bin/startxfce4 etc/calamares/settings.conf; do
     unsquashfs -ll "$TMP/fs.squashfs" "$f" 2>/dev/null | grep -q "$(basename "$f")" && ok "présent : /$f" || ko "manquant : /$f"
   done
   # aucun mot de passe intégré : aucun hash réel dans /etc/shadow (champ 2 doit être ! * ou vide)
